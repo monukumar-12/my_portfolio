@@ -11,10 +11,11 @@
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
 
+/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 4rem;background:rgba(8,8,15,0.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
 .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color .2s}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.83rem;transition:color .2s}
 .nav-links a:hover{color:var(--text)}
 .nav-cta{background:var(--accent);color:#fff;border:none;padding:.45rem 1.1rem;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.82rem;cursor:pointer;text-decoration:none;transition:opacity .2s}
 .nav-cta:hover{opacity:.85}
@@ -24,34 +25,34 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(79,142,247,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(79,142,247,0.04) 1px,transparent 1px);background-size:48px 48px}
 .glow1{position:absolute;top:-180px;left:-180px;width:650px;height:650px;border-radius:50%;background:radial-gradient(circle,rgba(79,142,247,0.11) 0%,transparent 70%);pointer-events:none}
 .glow2{position:absolute;bottom:-120px;right:-80px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(0,201,167,0.08) 0%,transparent 70%);pointer-events:none}
-.hero-content{position:relative;z-index:1;max-width:720px}
+.hero-content{position:relative;z-index:1;max-width:740px}
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,201,167,0.1);border:1px solid rgba(0,201,167,0.25);color:#5de0c8;padding:.32rem .9rem;border-radius:100px;font-size:0.78rem;font-weight:500;margin-bottom:1.4rem;letter-spacing:.3px}
 .hero-badge::before{content:'';width:7px;height:7px;background:var(--accent2);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
 h1{font-family:'Syne',sans-serif;font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:800;line-height:1.07;letter-spacing:-1.5px;margin-bottom:.5rem}
 .h1-accent{color:var(--accent)}
-.hero-role{font-size:1.05rem;color:var(--accent2);font-weight:500;margin:.5rem 0 1rem;letter-spacing:.3px}
-.hero-sub{font-size:1rem;color:var(--muted);max-width:540px;margin-bottom:2rem;font-weight:300;line-height:1.75}
+.hero-role{font-size:1rem;color:var(--accent2);font-weight:500;margin:.5rem 0 1rem;letter-spacing:.3px}
+.hero-sub{font-size:1rem;color:var(--muted);max-width:560px;margin-bottom:2rem;font-weight:300;line-height:1.75}
 .hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-primary{background:var(--accent);color:#fff;border:none;padding:.7rem 1.7rem;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:.92rem;font-weight:500;cursor:pointer;text-decoration:none;transition:transform .18s,opacity .18s}
+.btn-primary{background:var(--accent);color:#fff;border:none;padding:.7rem 1.7rem;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:.92rem;font-weight:500;cursor:pointer;text-decoration:none;transition:transform .18s,opacity .18s;display:inline-block}
 .btn-primary:hover{transform:translateY(-2px);opacity:.9}
-.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border);padding:.7rem 1.7rem;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:.92rem;cursor:pointer;text-decoration:none;transition:border-color .18s,transform .18s}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border);padding:.7rem 1.7rem;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:.92rem;cursor:pointer;text-decoration:none;transition:border-color .18s,transform .18s;display:inline-block}
 .btn-outline:hover{border-color:var(--accent);transform:translateY(-2px)}
-.hero-stats{display:flex;gap:2.5rem;margin-top:3.2rem;padding-top:2.5rem;border-top:1px solid var(--border)}
+.hero-stats{display:flex;gap:2.5rem;margin-top:3.2rem;padding-top:2.5rem;border-top:1px solid var(--border);flex-wrap:wrap}
 .stat-num{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:700}
-.stat-label{font-size:0.76rem;color:var(--muted);margin-top:.1rem}
+.stat-label{font-size:0.74rem;color:var(--muted);margin-top:.1rem}
 
 /* SECTIONS */
 section{padding:5.5rem 4rem}
 .section-label{font-size:.72rem;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent2);margin-bottom:.6rem}
 .section-title{font-family:'Syne',sans-serif;font-size:clamp(1.7rem,3.2vw,2.3rem);font-weight:700;letter-spacing:-.8px;margin-bottom:.8rem}
-.section-desc{color:var(--muted);max-width:480px;font-size:.92rem;margin-bottom:2.5rem}
+.section-desc{color:var(--muted);max-width:500px;font-size:.92rem;margin-bottom:2.5rem}
 
 /* ABOUT */
 #about{background:var(--surface)}
 .about-grid{display:grid;grid-template-columns:220px 1fr;gap:3.5rem;align-items:center}
 .avatar-ring{width:200px;height:200px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));padding:3px;margin:0 auto}
-.avatar-inner{width:100%;height:100%;border-radius:50%;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:4rem;font-weight:800;color:var(--accent)}
+.avatar-inner{width:100%;height:100%;border-radius:50%;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:4rem;font-weight:800;color:var(--accent);overflow:hidden}
 .avail-badge{margin-top:1rem;text-align:center;background:rgba(0,201,167,0.08);border:1px solid rgba(0,201,167,0.2);color:#5de0c8;padding:.3rem .7rem;border-radius:100px;font-size:.72rem;display:inline-flex;align-items:center;gap:.35rem}
 .green-dot{width:6px;height:6px;background:var(--accent2);border-radius:50%}
 .about-text h3{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:.9rem;letter-spacing:-.4px}
@@ -72,27 +73,30 @@ section{padding:5.5rem 4rem}
 
 /* PROJECTS */
 #projects{background:var(--surface)}
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.3rem}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.3rem}
 .project-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.7rem;position:relative;overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
 .project-card:hover{border-color:var(--accent);transform:translateY(-5px)}
 .project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:opacity .2s}
 .project-card:hover::before{opacity:1}
 .project-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.9rem}
 .project-icon{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.35rem}
+.proj-links{display:flex;gap:.4rem}
 .proj-link{color:var(--muted);text-decoration:none;font-size:.74rem;background:var(--surface2);border:1px solid var(--border);padding:.22rem .55rem;border-radius:6px;transition:color .2s}
 .proj-link:hover{color:var(--accent)}
 .project-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:.4rem}
 .project-desc{color:var(--muted);font-size:.85rem;line-height:1.6;flex:1}
 .project-tech{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:1rem}
 .tech-badge{font-size:.7rem;font-weight:500;padding:.22rem .55rem;border-radius:6px}
-.project-meta{display:flex;gap:.9rem;margin-top:.9rem;padding-top:.9rem;border-top:1px solid var(--border)}
+.project-meta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.9rem;padding-top:.9rem;border-top:1px solid var(--border)}
 .project-meta span{font-size:.73rem;color:var(--muted)}
+.featured-tag{position:absolute;top:1rem;right:1rem;background:rgba(79,142,247,0.15);border:1px solid rgba(79,142,247,0.3);color:#90b8fa;font-size:.65rem;padding:.18rem .5rem;border-radius:5px;font-weight:500}
 
 /* EXPERIENCE TIMELINE */
 .timeline{position:relative;padding-left:1.8rem}
 .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border)}
 .timeline-item{position:relative;padding-bottom:2.3rem;padding-left:1.8rem}
 .timeline-dot{position:absolute;left:-2.25rem;top:.25rem;width:13px;height:13px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.timeline-dot.green{border-color:var(--accent2)}
 .timeline-date{font-size:.74rem;color:var(--accent2);font-weight:500;margin-bottom:.25rem;letter-spacing:.5px}
 .timeline-title{font-family:'Syne',sans-serif;font-weight:700;font-size:.97rem;margin-bottom:.1rem}
 .timeline-org{font-size:.8rem;color:var(--muted);margin-bottom:.6rem}
@@ -109,7 +113,7 @@ section{padding:5.5rem 4rem}
 .ach-title{font-family:'Syne',sans-serif;font-weight:600;font-size:.92rem;margin-bottom:.35rem}
 .ach-desc{font-size:.82rem;color:var(--muted)}
 
-/* RESUME SNAPSHOT */
+/* RESUME */
 .resume-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2.5rem}
 .resume-col h3{font-size:.72rem;color:var(--accent2);font-weight:500;letter-spacing:2px;text-transform:uppercase;margin-bottom:1rem}
 .resume-item{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border)}
@@ -118,9 +122,9 @@ section{padding:5.5rem 4rem}
 .resume-item-sub{font-size:.78rem;color:var(--muted)}
 .cert-list{display:flex;flex-direction:column;gap:.7rem}
 .cert-item{display:flex;align-items:center;gap:.7rem;font-size:.85rem;color:var(--muted);padding:.6rem .9rem;background:var(--card);border:1px solid var(--border);border-radius:9px}
-.cert-item::before{content:'🏅';font-size:1rem}
 
 /* CONTACT */
+#contact{background:var(--bg)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
 .contact-info h3{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:.85rem}
 .contact-info p{color:var(--muted);font-size:.9rem;margin-bottom:1.3rem}
@@ -145,12 +149,14 @@ footer{border-top:1px solid var(--border);padding:1.8rem 4rem;display:flex;justi
   .nav-links{display:none}
   section,#hero{padding:5rem 1.5rem}
   .about-grid,.resume-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-stats{gap:1.5rem}
   footer{flex-direction:column;gap:.8rem;text-align:center}
 }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <div class="nav-logo">Monu Kumar</div>
   <ul class="nav-links">
@@ -159,6 +165,7 @@ footer{border-top:1px solid var(--border);padding:1.8rem 4rem;display:flex;justi
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#resume">Resume</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="mailto:monubhumihar93@gmail.com" class="nav-cta">Hire Me</a>
@@ -172,23 +179,23 @@ footer{border-top:1px solid var(--border);padding:1.8rem 4rem;display:flex;justi
   <div class="hero-content">
     <div class="hero-badge">Open to Internships &amp; Full-time Roles</div>
     <h1>Hi, I'm <span class="h1-accent">Monu Kumar</span></h1>
-    <div class="hero-role">☕ Java Backend Developer · Spring Boot · REST APIs</div>
-    <p class="hero-sub">Pre-final year B.Tech CSE student at SOA University. Selected for Data Engineering Internship at Celebal Technologies. Passionate about building scalable backend systems with clean architecture.</p>
+    <div class="hero-role">☕ Java Backend Developer &nbsp;·&nbsp; Spring Boot &nbsp;·&nbsp; Microservices &nbsp;·&nbsp; Cloud</div>
+    <p class="hero-sub">Pre-final year B.Tech CSE student at SOA University. Interning at Celebal Technologies as a Data Engineering Intern. Passionate about building scalable backend systems, microservices architecture, and cloud-native applications.</p>
     <div class="hero-actions">
       <a href="#projects" class="btn-primary">View My Projects</a>
       <a href="#contact" class="btn-outline">Get in Touch</a>
     </div>
     <div class="hero-stats">
       <div>
-        <div class="stat-num">3</div>
-        <div class="stat-label">Projects Built</div>
+      <div class="stat-num">10+</div>
+<div class="stat-label">Projects Built</div>
       </div>
       <div>
         <div class="stat-num">250+</div>
         <div class="stat-label">Problems Solved</div>
       </div>
       <div>
-        <div class="stat-num">8.62</div>
+        <div class="stat-num">8.55</div>
         <div class="stat-label">CGPA</div>
       </div>
       <div>
@@ -203,20 +210,25 @@ footer{border-top:1px solid var(--border);padding:1.8rem 4rem;display:flex;justi
 <section id="about">
   <div class="about-grid fade-up">
     <div style="display:flex;flex-direction:column;align-items:center">
-     <img src="myself.png" style="width:100%;height:100%;border-radius:50%;object-fit:cover;" alt="Monu Kumar"/>
-      <div class="avail-badge"><span class="green-dot"></span> Available for opportunities</div>
+      <div class="avatar-ring">
+        <div class="avatar-inner">
+          <img src="myself.png" style="width:100%;height:100%;border-radius:50%;object-fit:cover" alt="Monu Kumar" onerror="this.style.display='none';this.parentNode.innerHTML='MK'"/>
+        </div>
+      </div>
+      <div class="avail-badge" style="margin-top:1rem"><span class="green-dot"></span> Available for opportunities</div>
     </div>
     <div class="about-text">
       <div class="section-label">About Me</div>
       <h3>Backend engineer who loves building things that scale</h3>
       <p>I'm Monu Kumar from Muzaffarpur, Bihar — a 3rd-year B.Tech CSE student at Institute of Technical Education and Research (SOA University), with a CGPA of 8.62.</p>
-      <p>My core strength is Java backend development with Spring Boot — I enjoy designing clean REST APIs, implementing security with JWT, and optimising database operations. I'm also diving into AI-integrated systems using Spring AI and RAG concepts.</p>
-      <p>I was selected for a <strong style="color:var(--text)">Data Engineering Internship at Celebal Technologies</strong> and am currently training at <strong style="color:var(--text)">KFin Technologies</strong> on FinTech, Cloud, and DevOps systems.</p>
+      <p>My core strength is Java backend development with Spring Boot. I enjoy designing clean REST APIs, building microservices, implementing security with JWT, and deploying to cloud platforms. I'm also exploring AI-integrated systems using Spring AI and RAG concepts.</p>
+      <p>I am currently interning at <strong style="color:var(--text)">Celebal Technologies</strong> as a Data Engineering Intern and training at <strong style="color:var(--text)">KFin Technologies</strong> on FinTech, Finance, Stocks, Mutual Funds, Cloud, and DevOps systems.</p>
       <div class="about-chips">
         <span class="chip">📍 Muzaffarpur, Bihar</span>
         <span class="chip">🎓 B.Tech CSE · SOA University</span>
         <span class="chip">☕ Java &amp; Spring Boot</span>
-        <span class="chip">📞 9341292943</span>
+        <span class="chip">🔗 Microservices</span>
+        <span class="chip">☁️ Cloud Native</span>
         <span class="chip">🤖 Spring AI Explorer</span>
       </div>
     </div>
@@ -227,43 +239,55 @@ footer{border-top:1px solid var(--border);padding:1.8rem 4rem;display:flex;justi
 <section id="skills">
   <div class="section-label fade-up">Technical Skills</div>
   <div class="section-title fade-up">What I Work With</div>
-  <p class="section-desc fade-up">Languages, frameworks, and tools I use to design and ship backend systems.</p>
+  <p class="section-desc fade-up">Languages, frameworks, tools, and cloud platforms I use to design and ship backend systems.</p>
   <div class="skills-grid fade-up">
     <div class="skill-card">
       <div class="skill-icon" style="background:rgba(79,142,247,0.15)">☕</div>
       <div class="skill-name">Core Java</div>
       <div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div>
-      <div class="skill-tags"><span class="skill-tag">OOP</span><span class="skill-tag">Collections</span><span class="skill-tag">Streams</span><span class="skill-tag">Exception Handling</span></div>
+      <div class="skill-tags"><span class="skill-tag">OOP</span><span class="skill-tag">Collections</span><span class="skill-tag">Streams</span><span class="skill-tag">Multithreading</span></div>
     </div>
     <div class="skill-card">
       <div class="skill-icon" style="background:rgba(0,201,167,0.12)">🌱</div>
       <div class="skill-name">Spring Ecosystem</div>
-      <div class="skill-bar-wrap"><div class="skill-bar" style="width:82%"></div></div>
+      <div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div>
       <div class="skill-tags"><span class="skill-tag">Spring Boot</span><span class="skill-tag">Spring MVC</span><span class="skill-tag">Spring Security</span><span class="skill-tag">Spring AI</span></div>
     </div>
     <div class="skill-card">
-      <div class="skill-icon" style="background:rgba(247,107,79,0.12)">🗄️</div>
+      <div class="skill-icon" style="background:rgba(247,107,79,0.15)">🔗</div>
+      <div class="skill-name">Microservices</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" style="width:72%"></div></div>
+      <div class="skill-tags"><span class="skill-tag">Service Registry</span><span class="skill-tag">API Gateway</span><span class="skill-tag">Feign Client</span><span class="skill-tag">Eureka</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon" style="background:rgba(200,150,255,0.12)">☁️</div>
+      <div class="skill-name">Cloud & DevOps</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" style="width:65%"></div></div>
+      <div class="skill-tags"><span class="skill-tag">AWS</span><span class="skill-tag">Azure</span><span class="skill-tag">Docker</span><span class="skill-tag">CI/CD</span><span class="skill-tag">Linux</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon" style="background:rgba(79,142,247,0.15)">🗄️</div>
       <div class="skill-name">Databases</div>
-      <div class="skill-bar-wrap"><div class="skill-bar" style="width:75%"></div></div>
+      <div class="skill-bar-wrap"><div class="skill-bar" style="width:78%"></div></div>
       <div class="skill-tags"><span class="skill-tag">MySQL</span><span class="skill-tag">H2</span><span class="skill-tag">MongoDB</span><span class="skill-tag">JPA/Hibernate</span></div>
     </div>
     <div class="skill-card">
-      <div class="skill-icon" style="background:rgba(79,142,247,0.15)">🔐</div>
+      <div class="skill-icon" style="background:rgba(0,201,167,0.12)">🔐</div>
       <div class="skill-name">API & Security</div>
-      <div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div>
-      <div class="skill-tags"><span class="skill-tag">REST APIs</span><span class="skill-tag">JWT</span><span class="skill-tag">Swagger</span><span class="skill-tag">Postman</span></div>
+      <div class="skill-bar-wrap"><div class="skill-bar" style="width:82%"></div></div>
+      <div class="skill-tags"><span class="skill-tag">REST APIs</span><span class="skill-tag">JWT</span><span class="skill-tag">OAuth2</span><span class="skill-tag">Swagger</span><span class="skill-tag">Postman</span></div>
     </div>
     <div class="skill-card">
-      <div class="skill-icon" style="background:rgba(0,201,167,0.12)">🧪</div>
-      <div class="skill-name">Testing & Tools</div>
-      <div class="skill-bar-wrap"><div class="skill-bar" style="width:65%"></div></div>
-      <div class="skill-tags"><span class="skill-tag">JUnit</span><span class="skill-tag">Mockito</span><span class="skill-tag">Maven</span><span class="skill-tag">Git</span><span class="skill-tag">Docker</span></div>
+      <div class="skill-icon" style="background:rgba(247,107,79,0.12)">🧪</div>
+      <div class="skill-name">Testing & Build</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" style="width:68%"></div></div>
+      <div class="skill-tags"><span class="skill-tag">JUnit</span><span class="skill-tag">Mockito</span><span class="skill-tag">Maven</span><span class="skill-tag">Git</span></div>
     </div>
     <div class="skill-card">
-      <div class="skill-icon" style="background:rgba(247,107,79,0.12)">🤖</div>
+      <div class="skill-icon" style="background:rgba(200,150,255,0.12)">🤖</div>
       <div class="skill-name">AI & Data</div>
       <div class="skill-bar-wrap"><div class="skill-bar" style="width:55%"></div></div>
-      <div class="skill-tags"><span class="skill-tag">Spring AI</span><span class="skill-tag">RAG</span><span class="skill-tag">NumPy</span><span class="skill-tag">Pandas</span><span class="skill-tag">Python</span></div>
+      <div class="skill-tags"><span class="skill-tag">Spring AI</span><span class="skill-tag">RAG</span><span class="skill-tag">NumPy</span><span class="skill-tag">Pandas</span><span class="skill-tag">ETL</span></div>
     </div>
   </div>
 </section>
@@ -272,21 +296,27 @@ footer{border-top:1px solid var(--border);padding:1.8rem 4rem;display:flex;justi
 <section id="projects">
   <div class="section-label fade-up">Projects</div>
   <div class="section-title fade-up">Things I've Built</div>
-  <p class="section-desc fade-up">Backend systems designed for scale, security, and clean architecture.</p>
+  <p class="section-desc fade-up">Backend systems, full-stack apps, and AI-integrated projects — designed for scale, security, and clean architecture.</p>
   <div class="projects-grid fade-up">
 
+    <!-- Project 1 -->
     <div class="project-card">
+      <span class="featured-tag">⭐ Featured</span>
       <div class="project-header">
         <div class="project-icon" style="background:rgba(79,142,247,0.15)">🏠</div>
-        <a href="#" class="proj-link">GitHub ↗</a>
+        <div class="proj-links">
+          <a href="#" class="proj-link">GitHub ↗</a>
+          <a href="#" class="proj-link">Live ↗</a>
+        </div>
       </div>
       <div class="project-title">Home Harbour</div>
-      <p class="project-desc">Airbnb-like backend system for property booking and management. Built a layered REST architecture with JWT auth, supporting 15+ APIs covering listing creation, booking flows, and user management.</p>
+      <p class="project-desc">Airbnb-like backend system for property booking and management. Built with layered REST architecture, JWT authentication, and 15+ APIs covering property listing, booking flows, search filters, and user management.</p>
       <div class="project-tech">
         <span class="tech-badge" style="background:rgba(79,142,247,0.15);color:#90b8fa">Java</span>
         <span class="tech-badge" style="background:rgba(0,201,167,0.12);color:#5de0c8">Spring Boot</span>
         <span class="tech-badge" style="background:rgba(247,107,79,0.12);color:#f9a090">MySQL</span>
-        <span class="tech-badge" style="background:rgba(79,142,247,0.1);color:#90b8fa">JWT</span>
+        <span class="tech-badge" style="background:rgba(200,150,255,0.12);color:#d4aaff">JWT</span>
+        <span class="tech-badge" style="background:rgba(79,142,247,0.1);color:#90b8fa">JPA</span>
       </div>
       <div class="project-meta">
         <span>⚙️ 15+ REST APIs</span>
@@ -295,33 +325,42 @@ footer{border-top:1px solid var(--border);padding:1.8rem 4rem;display:flex;justi
       </div>
     </div>
 
+    <!-- Project 2 -->
     <div class="project-card">
       <div class="project-header">
         <div class="project-icon" style="background:rgba(0,201,167,0.12)">👥</div>
-        <a href="#" class="proj-link">GitHub ↗</a>
+        <div class="proj-links">
+          <a href="#" class="proj-link">GitHub ↗</a>
+        </div>
       </div>
-      <div class="project-title">HRMS – Human Resource Management System</div>
-      <p class="project-desc">Role-based HR management system with full CRUD operations, authentication, and authorization. Includes unit testing support using JUnit and Mockito with comprehensive exception handling.</p>
+      <div class="project-title">HRMS – Human Resource Management</div>
+      <p class="project-desc">Role-based HR management system with full CRUD operations, Spring Security authentication, authorization layers, and comprehensive exception handling. Includes unit testing with JUnit and Mockito for production-level reliability.</p>
       <div class="project-tech">
         <span class="tech-badge" style="background:rgba(79,142,247,0.15);color:#90b8fa">Java</span>
         <span class="tech-badge" style="background:rgba(0,201,167,0.12);color:#5de0c8">Spring Boot</span>
         <span class="tech-badge" style="background:rgba(247,107,79,0.12);color:#f9a090">Hibernate</span>
-        <span class="tech-badge" style="background:rgba(79,142,247,0.1);color:#90b8fa">H2 DB</span>
+        <span class="tech-badge" style="background:rgba(200,150,255,0.12);color:#d4aaff">H2 DB</span>
         <span class="tech-badge" style="background:rgba(200,180,0,0.12);color:#e8d070">JUnit</span>
+        <span class="tech-badge" style="background:rgba(200,180,0,0.12);color:#e8d070">Mockito</span>
       </div>
       <div class="project-meta">
         <span>🔑 Role-based Access</span>
         <span>🧪 Unit Tested</span>
+        <span>⚠️ Exception Handling</span>
       </div>
     </div>
 
+    <!-- Project 3 -->
     <div class="project-card">
       <div class="project-header">
         <div class="project-icon" style="background:rgba(247,107,79,0.12)">🤖</div>
-        <a href="#" class="proj-link">GitHub ↗</a>
+        <div class="proj-links">
+          <a href="#" class="proj-link">GitHub ↗</a>
+          <a href="#" class="proj-link">Demo ↗</a>
+        </div>
       </div>
       <div class="project-title">AI PDF Chat (RAG Project)</div>
-      <p class="project-desc">AI-integrated backend system that allows contextual document querying using Retrieval-Augmented Generation (RAG). Users can upload PDFs and ask natural language questions, powered by Spring AI.</p>
+      <p class="project-desc">AI-integrated backend system enabling contextual document querying using Retrieval-Augmented Generation (RAG). Upload any PDF, ask natural language questions, and get intelligent context-aware answers — powered by Spring AI.</p>
       <div class="project-tech">
         <span class="tech-badge" style="background:rgba(79,142,247,0.15);color:#90b8fa">Java</span>
         <span class="tech-badge" style="background:rgba(0,201,167,0.12);color:#5de0c8">Spring AI</span>
@@ -335,6 +374,32 @@ footer{border-top:1px solid var(--border);padding:1.8rem 4rem;display:flex;justi
       </div>
     </div>
 
+    <!-- Project 4 - Mutual Fund (KFin) -->
+    <div class="project-card">
+      <span class="featured-tag" style="background:rgba(0,201,167,0.12);border-color:rgba(0,201,167,0.3);color:#5de0c8">🏦 KFin Project</span>
+      <div class="project-header">
+        <div class="project-icon" style="background:rgba(0,201,167,0.12)">📈</div>
+        <div class="proj-links">
+          <a href="#" class="proj-link">GitHub ↗</a>
+          <a href="#" class="proj-link">Live ↗</a>
+        </div>
+      </div>
+      <div class="project-title">Mutual Fund Investment Platform</div>
+      <p class="project-desc">Full-stack FinTech web application built during KFin Technologies training. Features fund discovery, real-time NAV tracking, SIP calculator, portfolio dashboard, and investment management — built with deep understanding of how Mutual Funds, Stocks, and FinTech systems work.</p>
+      <div class="project-tech">
+        <span class="tech-badge" style="background:rgba(79,142,247,0.15);color:#90b8fa">Java</span>
+        <span class="tech-badge" style="background:rgba(0,201,167,0.12);color:#5de0c8">Spring Boot</span>
+        <span class="tech-badge" style="background:rgba(247,107,79,0.12);color:#f9a090">React</span>
+        <span class="tech-badge" style="background:rgba(200,180,0,0.12);color:#e8d070">MySQL</span>
+        <span class="tech-badge" style="background:rgba(200,150,255,0.12);color:#d4aaff">REST APIs</span>
+      </div>
+      <div class="project-meta">
+        <span>📊 NAV Tracking</span>
+        <span>💰 SIP Calculator</span>
+        <span>📁 Portfolio Dashboard</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -342,33 +407,34 @@ footer{border-top:1px solid var(--border);padding:1.8rem 4rem;display:flex;justi
 <section id="experience">
   <div class="section-label fade-up">Experience & Training</div>
   <div class="section-title fade-up">Where I've Worked</div>
-  <p class="section-desc fade-up">Industry internships and training that shaped my real-world skills.</p>
+  <p class="section-desc fade-up">Industry internships and real-world training that sharpened my backend, cloud, and FinTech skills.</p>
   <div class="timeline fade-up">
 
     <div class="timeline-item">
-      <div class="timeline-dot"></div>
+      <div class="timeline-dot green"></div>
       <div class="timeline-date">MAY 2026 – PRESENT</div>
-      <div class="timeline-title">Data Engineering Intern (Selected)</div>
+      <div class="timeline-title">Data Engineering Intern</div>
       <div class="timeline-org">Celebal Technologies · Remote</div>
       <div class="timeline-body">
         <ul>
-          <li>Selected through competitive profile screening and an online assessment process</li>
-          <li>Working with ETL workflows, cloud analytics, and data engineering pipelines</li>
-          <li>Gaining hands-on experience with large-scale data processing and cloud platforms</li>
+          <li>Selected through competitive profile screening and online assessment from a national applicant pool</li>
+          <li>Working with ETL workflows, data pipelines, cloud analytics, and large-scale data processing</li>
+          <li>Gaining hands-on exposure to cloud platforms, data warehousing, and engineering best practices</li>
         </ul>
       </div>
     </div>
 
     <div class="timeline-item">
-      <div class="timeline-dot"></div>
+      <div class="timeline-dot green"></div>
       <div class="timeline-date">MAY 2026 – JUNE 2026</div>
       <div class="timeline-title">Summer Industry Training Program</div>
       <div class="timeline-org">KFin Technologies · Industry Training</div>
       <div class="timeline-body">
         <ul>
-          <li>Trained on FinTech systems, Cloud infrastructure, SQL, DevOps practices, and backend architecture</li>
-          <li>Gained practical exposure to Docker, REST APIs, CI/CD pipelines, and analytics systems</li>
-          <li>Learned how enterprise-grade financial software is designed and maintained at scale</li>
+          <li>Trained on FinTech systems — learned Finance domain: Stocks, Mutual Funds, NAV, SIP, and investment flows</li>
+          <li>Gained practical exposure to Cloud (AWS/Azure), DevOps, Docker, CI/CD pipelines, SQL, and backend architecture</li>
+          <li>Built a full-stack Mutual Fund Investment Platform as a hands-on capstone project</li>
+          <li>Understood how enterprise-grade financial software is architected and maintained at scale</li>
         </ul>
       </div>
     </div>
@@ -380,9 +446,9 @@ footer{border-top:1px solid var(--border);padding:1.8rem 4rem;display:flex;justi
       <div class="timeline-org">SOA University (ITER) · Bhubaneswar</div>
       <div class="timeline-body">
         <ul>
-          <li>CGPA: 8.62/10 — consistent academic performance across all semesters</li>
-          <li>Core subjects: DSA, DBMS, OS, OOP, Computer Networks, Machine Learning</li>
-          <li>Previously completed Diploma in CSE from LPU (CGPA: 7.85)</li>
+          <li>CGPA: 8.55/10 — consistent academic performance across all semesters</li>
+          <li>Core subjects: DSA, DBMS, OS, OOP, Computer Networks, Cloud Computing, Machine Learning</li>
+          <li>Previously completed Diploma in CSE from Lovely Professional University (CGPA: 7.85)</li>
         </ul>
       </div>
     </div>
@@ -390,26 +456,36 @@ footer{border-top:1px solid var(--border);padding:1.8rem 4rem;display:flex;justi
   </div>
 </section>
 
-<!-- ACHIEVEMENTS & ACTIVITIES -->
+<!-- ACHIEVEMENTS -->
 <section id="achievements">
-  <div class="section-label fade-up">Achievements & Activities</div>
+  <div class="section-label fade-up">Achievements & Certifications</div>
   <div class="section-title fade-up">Beyond the Code</div>
-  <p class="section-desc fade-up">Certifications, competitive milestones, and things that keep me growing.</p>
+  <p class="section-desc fade-up">Certifications, competitive milestones, and things that keep me growing every day.</p>
   <div class="ach-grid fade-up">
     <div class="ach-card">
       <div class="ach-emoji">🏢</div>
-      <div class="ach-title">Celebal Technologies — Selected</div>
-      <div class="ach-desc">Secured a Data Engineering Internship through competitive profile screening and online assessment from a national applicant pool.</div>
+      <div class="ach-title">Celebal Technologies — Internship</div>
+      <div class="ach-desc">Selected for a Data Engineering Internship through competitive profile screening and online assessment from a national pool of applicants.</div>
     </div>
     <div class="ach-card">
       <div class="ach-emoji">🏦</div>
-      <div class="ach-title">KFin Technologies — Industry Training</div>
-      <div class="ach-desc">Underwent structured industry training covering FinTech, Cloud, DevOps, SQL, and backend engineering concepts.</div>
+      <div class="ach-title">KFin Technologies — FinTech Training</div>
+      <div class="ach-desc">Industry training on FinTech, Mutual Funds, Stocks, Finance domain, Cloud, DevOps, SQL, and backend engineering. Built a full-stack investment platform.</div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-emoji">🔗</div>
+      <div class="ach-title">Microservices Architecture</div>
+      <div class="ach-desc">Hands-on learning with Spring Cloud, Eureka Service Registry, API Gateway, Feign Client, and inter-service communication patterns.</div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-emoji">☁️</div>
+      <div class="ach-title">Cloud & Azure Fundamentals</div>
+      <div class="ach-desc">Trained on AWS and Azure cloud fundamentals — compute, storage, networking, serverless, and cloud-native deployment strategies.</div>
     </div>
     <div class="ach-card">
       <div class="ach-emoji">🧩</div>
       <div class="ach-title">250+ Coding Problems Solved</div>
-      <div class="ach-desc">Consistently practised Java, SQL, and Data Structures problems across platforms — building strong problem-solving fundamentals.</div>
+      <div class="ach-desc">Consistently practised Java, SQL, and Data Structures problems across LeetCode and other platforms — building strong algorithmic foundations.</div>
     </div>
     <div class="ach-card">
       <div class="ach-emoji">☕</div>
@@ -419,26 +495,27 @@ footer{border-top:1px solid var(--border);padding:1.8rem 4rem;display:flex;justi
     <div class="ach-card">
       <div class="ach-emoji">🗄️</div>
       <div class="ach-title">Relational Databases — IBM</div>
-      <div class="ach-desc">IBM-certified in RDBMS fundamentals covering SQL, database design, normalization, and transactions.</div>
+      <div class="ach-desc">IBM-certified in RDBMS fundamentals covering SQL, database design, normalization, transactions, and advanced querying.</div>
     </div>
     <div class="ach-card">
       <div class="ach-emoji">🌐</div>
       <div class="ach-title">Computer Networking — Google</div>
-      <div class="ach-desc">Google-certified in networking fundamentals — TCP/IP, HTTP, DNS, and network protocols essential for backend systems.</div>
+      <div class="ach-desc">Google-certified in networking fundamentals — TCP/IP, HTTP, DNS, and network protocols essential for designing robust backend systems.</div>
     </div>
   </div>
 </section>
 
 <!-- RESUME SNAPSHOT -->
-<section id="resume">
+<section id="resume" style="background:var(--surface)">
   <div class="section-label fade-up">Resume</div>
   <div class="section-title fade-up">Education & Certifications</div>
+
   <div class="resume-grid fade-up">
     <div class="resume-col">
       <h3>Education</h3>
       <div class="resume-item">
         <div class="resume-item-title">B.Tech — Computer Science & Engineering</div>
-        <div class="resume-item-sub">SOA University (ITER) · 2023–2027 · CGPA: 8.62</div>
+        <div class="resume-item-sub">SOA University (ITER) · 2023–2027 · CGPA: 8.55/10</div>
       </div>
       <div class="resume-item">
         <div class="resume-item-title">Diploma — Computer Science Engineering</div>
@@ -452,30 +529,30 @@ footer{border-top:1px solid var(--border);padding:1.8rem 4rem;display:flex;justi
     <div class="resume-col">
       <h3>Certifications</h3>
       <div class="cert-list">
-        <div class="cert-item">OOP in Java — University of San Diego</div>
+        <div class="cert-item">OOP in Java — University of California, San Diego</div>
         <div class="cert-item">Relational Databases (RDBMS) — IBM</div>
         <div class="cert-item">Computer Networking — Google</div>
       </div>
     </div>
   </div>
 
-  <div style="display:flex;align-items:center;justify-content:center;padding:2rem;border:1px dashed rgba(79,142,247,0.3);border-radius:14px;gap:1.5rem;background:rgba(79,142,247,0.04)" class="fade-up">
+  <div style="display:flex;align-items:center;justify-content:center;gap:1.5rem;padding:2rem;border:1px dashed rgba(79,142,247,0.3);border-radius:14px;background:rgba(79,142,247,0.04)" class="fade-up">
     <div>
       <p style="color:var(--text);font-weight:500;margin-bottom:.25rem">📄 Full Resume Available</p>
-      <p style="color:var(--muted);font-size:.85rem">Download my complete resume — projects, experience, certifications and more.</p>
+      <p style="color:var(--muted);font-size:.85rem">Download my complete resume with all projects, experience, and certifications.</p>
     </div>
-    <a href="mailto:monubhumihar93@gmail.com?subject=Resume Request - Monu Kumar" class="btn-primary" style="white-space:nowrap">Request Resume</a>
+    <a href="mailto:monubhumihar93@gmail.com?subject=Resume Request — Monu Kumar" class="btn-primary" style="white-space:nowrap">Request Resume</a>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" style="background:var(--surface)">
+<section id="contact">
   <div class="section-label fade-up">Contact</div>
   <div class="section-title fade-up">Let's Connect</div>
   <div class="contact-grid fade-up">
     <div class="contact-info">
       <h3>Open to opportunities 👋</h3>
-      <p>I'm actively looking for internships and full-time roles in Java backend development, data engineering, and cloud. If you have an opportunity or just want to connect, drop a message!</p>
+      <p>I'm actively looking for internships and full-time roles in Java backend development, microservices, data engineering, and cloud. If you have an opportunity or just want to talk tech, my inbox is always open!</p>
       <div class="contact-links">
         <a href="mailto:monubhumihar93@gmail.com" class="contact-link">
           <span>📧</span><span>monubhumihar93@gmail.com</span>
@@ -483,11 +560,11 @@ footer{border-top:1px solid var(--border);padding:1.8rem 4rem;display:flex;justi
         <a href="tel:9341292943" class="contact-link">
           <span>📞</span><span>+91 9341292943</span>
         </a>
-        <a href="https://linkedin.com" class="contact-link" target="_blank">
-          <span>💼</span><span>LinkedIn Profile</span>
+       <a href="https://www.linkedin.com/in/monu-kumar21" target="_blank" class="contact-link">
+  <span>💼</span><span>linkedin.com/in/monu-kumar21</span>
         </a>
-        <a href="https://github.com" class="contact-link" target="_blank">
-          <span>🐙</span><span>GitHub Profile</span>
+        <a href="https://github.com/monukumar-12" target="_blank" class="contact-link">
+          <span>🐙</span><span>GitHub — Update your URL</span>
         </a>
       </div>
     </div>
@@ -512,7 +589,7 @@ footer{border-top:1px solid var(--border);padding:1.8rem 4rem;display:flex;justi
 <footer>
   <div>
     <div class="footer-name">Monu Kumar</div>
-    <div style="margin-top:.2rem">Java Backend Developer · B.Tech CSE · SOA University · 2027</div>
+    <div style="margin-top:.2rem">Java Backend Developer · Microservices · Cloud · B.Tech CSE 2027</div>
   </div>
   <div>📍 Muzaffarpur, Bihar, India</div>
 </footer>
@@ -520,7 +597,7 @@ footer{border-top:1px solid var(--border);padding:1.8rem 4rem;display:flex;justi
 <script>
 const obs = new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
-},{threshold:0.12});
+},{threshold:0.1});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 </script>
 </body>
