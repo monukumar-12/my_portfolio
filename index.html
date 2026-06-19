@@ -1,604 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Monu Kumar | Java Backend Developer</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
-:root{--bg:#08080f;--surface:#111118;--surface2:#1a1a24;--border:rgba(255,255,255,0.07);--accent:#4f8ef7;--accent2:#00c9a7;--accent3:#f76b4f;--text:#eeeef8;--muted:#7d7d99;--card:#13131e}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
-
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 4rem;background:rgba(8,8,15,0.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.nav-links{display:flex;gap:1.8rem;list-style:none}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:0.83rem;transition:color .2s}
-.nav-links a:hover{color:var(--text)}
-.nav-cta{background:var(--accent);color:#fff;border:none;padding:.45rem 1.1rem;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:0.82rem;cursor:pointer;text-decoration:none;transition:opacity .2s}
-.nav-cta:hover{opacity:.85}
-
-/* HERO */
-#hero{min-height:100vh;display:flex;align-items:center;padding:8rem 4rem 4rem;position:relative;overflow:hidden}
-.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(79,142,247,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(79,142,247,0.04) 1px,transparent 1px);background-size:48px 48px}
-.glow1{position:absolute;top:-180px;left:-180px;width:650px;height:650px;border-radius:50%;background:radial-gradient(circle,rgba(79,142,247,0.11) 0%,transparent 70%);pointer-events:none}
-.glow2{position:absolute;bottom:-120px;right:-80px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(0,201,167,0.08) 0%,transparent 70%);pointer-events:none}
-.hero-content{position:relative;z-index:1;max-width:740px}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,201,167,0.1);border:1px solid rgba(0,201,167,0.25);color:#5de0c8;padding:.32rem .9rem;border-radius:100px;font-size:0.78rem;font-weight:500;margin-bottom:1.4rem;letter-spacing:.3px}
-.hero-badge::before{content:'';width:7px;height:7px;background:var(--accent2);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
-h1{font-family:'Syne',sans-serif;font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:800;line-height:1.07;letter-spacing:-1.5px;margin-bottom:.5rem}
-.h1-accent{color:var(--accent)}
-.hero-role{font-size:1rem;color:var(--accent2);font-weight:500;margin:.5rem 0 1rem;letter-spacing:.3px}
-.hero-sub{font-size:1rem;color:var(--muted);max-width:560px;margin-bottom:2rem;font-weight:300;line-height:1.75}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-primary{background:var(--accent);color:#fff;border:none;padding:.7rem 1.7rem;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:.92rem;font-weight:500;cursor:pointer;text-decoration:none;transition:transform .18s,opacity .18s;display:inline-block}
-.btn-primary:hover{transform:translateY(-2px);opacity:.9}
-.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border);padding:.7rem 1.7rem;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:.92rem;cursor:pointer;text-decoration:none;transition:border-color .18s,transform .18s;display:inline-block}
-.btn-outline:hover{border-color:var(--accent);transform:translateY(-2px)}
-.hero-stats{display:flex;gap:2.5rem;margin-top:3.2rem;padding-top:2.5rem;border-top:1px solid var(--border);flex-wrap:wrap}
-.stat-num{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:700}
-.stat-label{font-size:0.74rem;color:var(--muted);margin-top:.1rem}
-
-/* SECTIONS */
-section{padding:5.5rem 4rem}
-.section-label{font-size:.72rem;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent2);margin-bottom:.6rem}
-.section-title{font-family:'Syne',sans-serif;font-size:clamp(1.7rem,3.2vw,2.3rem);font-weight:700;letter-spacing:-.8px;margin-bottom:.8rem}
-.section-desc{color:var(--muted);max-width:500px;font-size:.92rem;margin-bottom:2.5rem}
-
-/* ABOUT */
-#about{background:var(--surface)}
-.about-grid{display:grid;grid-template-columns:220px 1fr;gap:3.5rem;align-items:center}
-.avatar-ring{width:200px;height:200px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));padding:3px;margin:0 auto}
-.avatar-inner{width:100%;height:100%;border-radius:50%;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:4rem;font-weight:800;color:var(--accent);overflow:hidden}
-.avail-badge{margin-top:1rem;text-align:center;background:rgba(0,201,167,0.08);border:1px solid rgba(0,201,167,0.2);color:#5de0c8;padding:.3rem .7rem;border-radius:100px;font-size:.72rem;display:inline-flex;align-items:center;gap:.35rem}
-.green-dot{width:6px;height:6px;background:var(--accent2);border-radius:50%}
-.about-text h3{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:.9rem;letter-spacing:-.4px}
-.about-text p{color:var(--muted);margin-bottom:.85rem;font-size:.92rem}
-.about-chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.3rem}
-.chip{background:var(--surface2);border:1px solid var(--border);padding:.3rem .8rem;border-radius:100px;font-size:.75rem;color:var(--muted)}
-
-/* SKILLS */
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem}
-.skill-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.3rem;transition:border-color .2s,transform .2s}
-.skill-card:hover{border-color:var(--accent);transform:translateY(-4px)}
-.skill-icon{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:.65rem}
-.skill-name{font-family:'Syne',sans-serif;font-weight:600;font-size:.9rem;margin-bottom:.25rem}
-.skill-bar-wrap{margin-top:.7rem;background:var(--surface2);border-radius:4px;height:2px}
-.skill-bar{height:2px;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
-.skill-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.55rem}
-.skill-tag{font-size:.7rem;color:var(--muted);background:var(--surface2);padding:.18rem .48rem;border-radius:4px}
-
-/* PROJECTS */
-#projects{background:var(--surface)}
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.3rem}
-.project-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.7rem;position:relative;overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
-.project-card:hover{border-color:var(--accent);transform:translateY(-5px)}
-.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:opacity .2s}
-.project-card:hover::before{opacity:1}
-.project-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.9rem}
-.project-icon{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.35rem}
-.proj-links{display:flex;gap:.4rem}
-.proj-link{color:var(--muted);text-decoration:none;font-size:.74rem;background:var(--surface2);border:1px solid var(--border);padding:.22rem .55rem;border-radius:6px;transition:color .2s}
-.proj-link:hover{color:var(--accent)}
-.project-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:.4rem}
-.project-desc{color:var(--muted);font-size:.85rem;line-height:1.6;flex:1}
-.project-tech{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:1rem}
-.tech-badge{font-size:.7rem;font-weight:500;padding:.22rem .55rem;border-radius:6px}
-.project-meta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.9rem;padding-top:.9rem;border-top:1px solid var(--border)}
-.project-meta span{font-size:.73rem;color:var(--muted)}
-.featured-tag{position:absolute;top:1rem;right:1rem;background:rgba(79,142,247,0.15);border:1px solid rgba(79,142,247,0.3);color:#90b8fa;font-size:.65rem;padding:.18rem .5rem;border-radius:5px;font-weight:500}
-
-/* EXPERIENCE TIMELINE */
-.timeline{position:relative;padding-left:1.8rem}
-.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border)}
-.timeline-item{position:relative;padding-bottom:2.3rem;padding-left:1.8rem}
-.timeline-dot{position:absolute;left:-2.25rem;top:.25rem;width:13px;height:13px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
-.timeline-dot.green{border-color:var(--accent2)}
-.timeline-date{font-size:.74rem;color:var(--accent2);font-weight:500;margin-bottom:.25rem;letter-spacing:.5px}
-.timeline-title{font-family:'Syne',sans-serif;font-weight:700;font-size:.97rem;margin-bottom:.1rem}
-.timeline-org{font-size:.8rem;color:var(--muted);margin-bottom:.6rem}
-.timeline-body{font-size:.85rem;color:var(--muted)}
-.timeline-body ul{padding-left:1.1rem}
-.timeline-body li{margin-bottom:.28rem}
-
-/* ACHIEVEMENTS */
-#achievements{background:var(--surface)}
-.ach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.1rem}
-.ach-card{background:var(--card);border:1px solid var(--border);border-radius:13px;padding:1.3rem;transition:transform .2s,border-color .2s}
-.ach-card:hover{transform:translateY(-3px);border-color:var(--accent2)}
-.ach-emoji{font-size:1.7rem;margin-bottom:.6rem}
-.ach-title{font-family:'Syne',sans-serif;font-weight:600;font-size:.92rem;margin-bottom:.35rem}
-.ach-desc{font-size:.82rem;color:var(--muted)}
-
-/* RESUME */
-.resume-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2.5rem}
-.resume-col h3{font-size:.72rem;color:var(--accent2);font-weight:500;letter-spacing:2px;text-transform:uppercase;margin-bottom:1rem}
-.resume-item{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border)}
-.resume-item:last-child{border-bottom:none}
-.resume-item-title{font-weight:500;font-size:.9rem;margin-bottom:.1rem}
-.resume-item-sub{font-size:.78rem;color:var(--muted)}
-.cert-list{display:flex;flex-direction:column;gap:.7rem}
-.cert-item{display:flex;align-items:center;gap:.7rem;font-size:.85rem;color:var(--muted);padding:.6rem .9rem;background:var(--card);border:1px solid var(--border);border-radius:9px}
-
-/* CONTACT */
-#contact{background:var(--bg)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
-.contact-info h3{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:.85rem}
-.contact-info p{color:var(--muted);font-size:.9rem;margin-bottom:1.3rem}
-.contact-links{display:flex;flex-direction:column;gap:.65rem}
-.contact-link{display:flex;align-items:center;gap:.85rem;color:var(--muted);text-decoration:none;font-size:.85rem;padding:.7rem .95rem;border-radius:10px;border:1px solid var(--border);background:var(--card);transition:border-color .2s,color .2s}
-.contact-link:hover{border-color:var(--accent);color:var(--text)}
-.contact-form{display:flex;flex-direction:column;gap:.9rem}
-.form-group{display:flex;flex-direction:column;gap:.35rem}
-.form-group label{font-size:.77rem;color:var(--muted)}
-.form-group input,.form-group textarea{background:var(--card);border:1px solid var(--border);color:var(--text);padding:.7rem .95rem;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:.88rem;outline:none;transition:border-color .2s;resize:vertical}
-.form-group input:focus,.form-group textarea:focus{border-color:var(--accent)}
-.form-group textarea{min-height:95px}
-
-footer{border-top:1px solid var(--border);padding:1.8rem 4rem;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.78rem}
-.footer-name{font-family:'Syne',sans-serif;font-weight:700;color:var(--text)}
-
-.fade-up{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
-.fade-up.visible{opacity:1;transform:translateY(0)}
-
-@media(max-width:768px){
-  nav{padding:1rem 1.5rem}
-  .nav-links{display:none}
-  section,#hero{padding:5rem 1.5rem}
-  .about-grid,.resume-grid,.contact-grid{grid-template-columns:1fr}
-  .hero-stats{gap:1.5rem}
-  footer{flex-direction:column;gap:.8rem;text-align:center}
+:root{
+  --bg:#08080f;--surface:#111118;--card:#151521;--border:rgba(255,255,255,.08);
+  --text:#f4f4fb;--muted:#9a9ab3;--accent:#4f8ef7;--green:#00c9a7;--orange:#f76b4f;
 }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 4rem;background:rgba(8,8,15,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.logo{font-family:'Syne',sans-serif;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:1.5rem;list-style:none;font-size:.84rem;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.nav-btn{background:var(--accent);color:#fff;padding:.45rem 1rem;border-radius:8px;font-size:.82rem}
+section{padding:5rem 4rem}
+#hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:8rem}
+#hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(79,142,247,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(79,142,247,.05) 1px,transparent 1px);background-size:48px 48px}
+.glow{position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(79,142,247,.14),transparent 68%);top:-180px;left:-160px}
+.hero-content{position:relative;z-index:2;max-width:780px}
+.badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,201,167,.1);border:1px solid rgba(0,201,167,.25);color:#62e0ca;padding:.35rem .85rem;border-radius:999px;font-size:.78rem;margin-bottom:1.2rem}
+.badge:before{content:"";width:7px;height:7px;background:var(--green);border-radius:50%}
+h1{font-family:'Syne',sans-serif;font-size:clamp(2.7rem,6vw,4.6rem);line-height:1.05;letter-spacing:-1.7px;margin-bottom:.6rem}
+.accent{color:var(--accent)}
+.role{font-size:1.05rem;color:var(--green);font-weight:600;margin-bottom:1rem}
+.hero-sub{max-width:570px;color:var(--muted);font-size:1rem;margin-bottom:2rem}
+.actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary,.btn-outline{padding:.7rem 1.45rem;border-radius:10px;font-weight:600;font-size:.92rem;display:inline-block;transition:.2s}
+.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover,.btn-outline:hover{transform:translateY(-2px)}
+.btn-outline{border:1px solid var(--border);color:var(--text)}.btn-outline:hover{border-color:var(--accent)}
+.stats{display:flex;gap:2rem;flex-wrap:wrap;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+.stat-num{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800}.stat-label{font-size:.75rem;color:var(--muted)}
+.label{font-size:.72rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--green);font-weight:700;margin-bottom:.45rem}
+.title{font-family:'Syne',sans-serif;font-size:clamp(1.7rem,3vw,2.3rem);letter-spacing:-.7px;margin-bottom:.75rem}
+.desc{color:var(--muted);max-width:620px;font-size:.95rem;margin-bottom:2rem}
+#about,#projects,#resume{background:var(--surface)}
+.about-box{display:grid;grid-template-columns:210px 1fr;gap:3rem;align-items:center}
+.avatar{width:190px;height:190px;border-radius:50%;padding:3px;background:linear-gradient(135deg,var(--accent),var(--green));margin:auto}
+.avatar-inner{width:100%;height:100%;border-radius:50%;background:var(--card);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:3.6rem;font-weight:800;color:var(--accent);overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.about-text{color:var(--muted);font-size:.96rem}.about-text strong{color:var(--text)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}.chip{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:.35rem .75rem;color:var(--muted);font-size:.78rem}
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}.skill-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.15rem}.skill-title{font-family:'Syne',sans-serif;font-weight:700;margin-bottom:.45rem}.skill-list{color:var(--muted);font-size:.88rem}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1rem}.project{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.4rem;transition:.2s;min-height:245px;display:flex;flex-direction:column}.project:hover{border-color:var(--accent);transform:translateY(-4px)}
+.project-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem}.icon{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;font-size:1.35rem;background:rgba(79,142,247,.14)}.tag{font-size:.65rem;color:#8eb8ff;background:rgba(79,142,247,.15);border:1px solid rgba(79,142,247,.25);border-radius:6px;padding:.2rem .5rem}
+.project h3{font-family:'Syne',sans-serif;font-size:1rem;margin-bottom:.2rem}.project p{color:var(--muted);font-size:.85rem;margin-bottom:.8rem}.points{list-style:none;color:var(--muted);font-size:.83rem;display:grid;gap:.25rem;margin-bottom:1rem}.points li:before{content:"• ";color:var(--green)}.tech{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:auto}.tech span{font-size:.68rem;border-radius:6px;padding:.22rem .48rem;background:rgba(255,255,255,.06);color:#c7c7d8}
+.timeline{border-left:1px solid var(--border);padding-left:1.5rem;display:grid;gap:1.5rem}.time-item{position:relative}.time-item:before{content:"";position:absolute;left:-1.9rem;top:.25rem;width:11px;height:11px;border-radius:50%;border:2px solid var(--green);background:var(--bg)}.date{font-size:.72rem;color:var(--green);font-weight:700}.job{font-family:'Syne',sans-serif;font-weight:700}.org,.body{color:var(--muted);font-size:.85rem}
+.resume-box{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}.mini-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.2rem}.mini-card h3{font-family:'Syne',sans-serif;font-size:.95rem;margin-bottom:.6rem}.mini-card p{color:var(--muted);font-size:.84rem;margin-bottom:.45rem}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}.contact-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1rem}.contact-card a{display:block;color:var(--muted);font-size:.9rem;margin:.5rem 0}.contact-card a:hover{color:var(--text)}
+footer{border-top:1px solid var(--border);padding:1.5rem 4rem;color:var(--muted);font-size:.78rem;display:flex;justify-content:space-between;gap:1rem}
+.fade{opacity:0;transform:translateY(18px);transition:.6s}.fade.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){nav{padding:1rem 1.4rem}.nav-links{display:none}section,#hero{padding:4.5rem 1.4rem}.about-box,.resume-box,.contact-grid{grid-template-columns:1fr}footer{padding:1.3rem;flex-direction:column}.stats{gap:1.3rem}.avatar{width:170px;height:170px}}
 </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav>
-  <div class="nav-logo">Monu Kumar</div>
+  <a href="#hero" class="logo">Monu Kumar</a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#achievements">Achievements</a></li>
-    <li><a href="#resume">Resume</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#experience">Experience</a></li><li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="mailto:monubhumihar93@gmail.com" class="nav-cta">Hire Me</a>
+  <a href="mailto:monubhumihar93@gmail.com" class="nav-btn">Hire Me</a>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
-  <div class="hero-grid-bg"></div>
-  <div class="glow1"></div>
-  <div class="glow2"></div>
-  <div class="hero-content">
-    <div class="hero-badge">Open to Internships &amp; Full-time Roles</div>
-    <h1>Hi, I'm <span class="h1-accent">Monu Kumar</span></h1>
-    <div class="hero-role">☕ Java Backend Developer &nbsp;·&nbsp; Spring Boot &nbsp;·&nbsp; Microservices &nbsp;·&nbsp; Cloud</div>
-    <p class="hero-sub">Pre-final year B.Tech CSE student at SOA University. Interning at Celebal Technologies as a Data Engineering Intern. Passionate about building scalable backend systems, microservices architecture, and cloud-native applications.</p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn-primary">View My Projects</a>
-      <a href="#contact" class="btn-outline">Get in Touch</a>
+  <div class="glow"></div>
+  <div class="hero-content fade">
+    <div class="badge">Open to Internships & Full-time Roles</div>
+    <h1>Monu <span class="accent">Kumar</span></h1>
+    <div class="role">Java Backend Developer · Spring Boot · Microservices · AI Applications</div>
+    <p class="hero-sub">Building scalable backend systems, REST APIs, cloud-native applications, and AI-powered software with Spring Boot.</p>
+    <div class="actions">
+      <a href="#projects" class="btn-primary">View Projects</a>
+      <a href="#contact" class="btn-outline">Contact Me</a>
     </div>
-    <div class="hero-stats">
-      <div>
-      <div class="stat-num">10+</div>
-<div class="stat-label">Projects Built</div>
-      </div>
-      <div>
-        <div class="stat-num">250+</div>
-        <div class="stat-label">Problems Solved</div>
-      </div>
-      <div>
-        <div class="stat-num">8.55</div>
-        <div class="stat-label">CGPA</div>
-      </div>
-      <div>
-        <div class="stat-num">2027</div>
-        <div class="stat-label">Graduating</div>
-      </div>
+    <div class="stats">
+      <div><div class="stat-num">10+</div><div class="stat-label">Projects</div></div>
+      <div><div class="stat-num">250+</div><div class="stat-label">Problems Solved</div></div>
+      <div><div class="stat-num">8.55</div><div class="stat-label">CGPA</div></div>
+      <div><div class="stat-num">2027</div><div class="stat-label">Graduating</div></div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
-  <div class="about-grid fade-up">
-    <div style="display:flex;flex-direction:column;align-items:center">
-      <div class="avatar-ring">
-        <div class="avatar-inner">
-          <img src="myself.png" style="width:100%;height:100%;border-radius:50%;object-fit:cover" alt="Monu Kumar" onerror="this.style.display='none';this.parentNode.innerHTML='MK'"/>
-        </div>
-      </div>
-      <div class="avail-badge" style="margin-top:1rem"><span class="green-dot"></span> Available for opportunities</div>
-    </div>
-    <div class="about-text">
-      <div class="section-label">About Me</div>
-      <h3>Backend engineer who loves building things that scale</h3>
-      <p>I'm Monu Kumar from Muzaffarpur, Bihar — a 3rd-year B.Tech CSE student at Institute of Technical Education and Research (SOA University), with a CGPA of 8.55.</p>
-      <p>My core strength is Java backend development with Spring Boot. I enjoy designing clean REST APIs, building microservices, implementing security with JWT, and deploying to cloud platforms. I'm also exploring AI-integrated systems using Spring AI and RAG concepts.</p>
-      <p>I am currently interning at <strong style="color:var(--text)">Celebal Technologies</strong> as a Data Engineering Intern and training at <strong style="color:var(--text)">KFin Technologies</strong> on FinTech, Finance, Stocks, Mutual Funds, Cloud, and DevOps systems.</p>
-      <div class="about-chips">
-        <span class="chip">📍 Muzaffarpur, Bihar</span>
-        <span class="chip">🎓 B.Tech CSE · SOA University</span>
-        <span class="chip">☕ Java &amp; Spring Boot</span>
-        <span class="chip">🔗 Microservices</span>
-        <span class="chip">☁️ Cloud Native</span>
-        <span class="chip">🤖 Spring AI Explorer</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="section-label fade-up">Technical Skills</div>
-  <div class="section-title fade-up">What I Work With</div>
-  <p class="section-desc fade-up">Languages, frameworks, tools, and cloud platforms I use to design and ship backend systems.</p>
-  <div class="skills-grid fade-up">
-    <div class="skill-card">
-      <div class="skill-icon" style="background:rgba(79,142,247,0.15)">☕</div>
-      <div class="skill-name">Core Java</div>
-      <div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div>
-      <div class="skill-tags"><span class="skill-tag">OOP</span><span class="skill-tag">Collections</span><span class="skill-tag">Streams</span><span class="skill-tag">Multithreading</span></div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-icon" style="background:rgba(0,201,167,0.12)">🌱</div>
-      <div class="skill-name">Spring Ecosystem</div>
-      <div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div>
-      <div class="skill-tags"><span class="skill-tag">Spring Boot</span><span class="skill-tag">Spring MVC</span><span class="skill-tag">Spring Security</span><span class="skill-tag">Spring AI</span></div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-icon" style="background:rgba(247,107,79,0.15)">🔗</div>
-      <div class="skill-name">Microservices</div>
-      <div class="skill-bar-wrap"><div class="skill-bar" style="width:72%"></div></div>
-      <div class="skill-tags"><span class="skill-tag">Service Registry</span><span class="skill-tag">API Gateway</span><span class="skill-tag">Feign Client</span><span class="skill-tag">Eureka</span></div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-icon" style="background:rgba(200,150,255,0.12)">☁️</div>
-      <div class="skill-name">Cloud & DevOps</div>
-      <div class="skill-bar-wrap"><div class="skill-bar" style="width:65%"></div></div>
-      <div class="skill-tags"><span class="skill-tag">AWS</span><span class="skill-tag">Azure</span><span class="skill-tag">Docker</span><span class="skill-tag">CI/CD</span><span class="skill-tag">Linux</span></div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-icon" style="background:rgba(79,142,247,0.15)">🗄️</div>
-      <div class="skill-name">Databases</div>
-      <div class="skill-bar-wrap"><div class="skill-bar" style="width:78%"></div></div>
-      <div class="skill-tags"><span class="skill-tag">MySQL</span><span class="skill-tag">H2</span><span class="skill-tag">MongoDB</span><span class="skill-tag">JPA/Hibernate</span></div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-icon" style="background:rgba(0,201,167,0.12)">🔐</div>
-      <div class="skill-name">API & Security</div>
-      <div class="skill-bar-wrap"><div class="skill-bar" style="width:82%"></div></div>
-      <div class="skill-tags"><span class="skill-tag">REST APIs</span><span class="skill-tag">JWT</span><span class="skill-tag">OAuth2</span><span class="skill-tag">Swagger</span><span class="skill-tag">Postman</span></div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-icon" style="background:rgba(247,107,79,0.12)">🧪</div>
-      <div class="skill-name">Testing & Build</div>
-      <div class="skill-bar-wrap"><div class="skill-bar" style="width:68%"></div></div>
-      <div class="skill-tags"><span class="skill-tag">JUnit</span><span class="skill-tag">Mockito</span><span class="skill-tag">Maven</span><span class="skill-tag">Git</span></div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-icon" style="background:rgba(200,150,255,0.12)">🤖</div>
-      <div class="skill-name">AI & Data</div>
-      <div class="skill-bar-wrap"><div class="skill-bar" style="width:55%"></div></div>
-      <div class="skill-tags"><span class="skill-tag">Spring AI</span><span class="skill-tag">RAG</span><span class="skill-tag">NumPy</span><span class="skill-tag">Pandas</span><span class="skill-tag">ETL</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="section-label fade-up">Projects</div>
-  <div class="section-title fade-up">Things I've Built</div>
-  <p class="section-desc fade-up">Backend systems, full-stack apps, and AI-integrated projects — designed for scale, security, and clean architecture.</p>
-  <div class="projects-grid fade-up">
-
-    <!-- Project 1 -->
-    <div class="project-card">
-      <span class="featured-tag">⭐ Featured</span>
-      <div class="project-header">
-        <div class="project-icon" style="background:rgba(79,142,247,0.15)">🏠</div>
-        <div class="proj-links">
-          <a href="#" class="proj-link">GitHub ↗</a>
-          <a href="#" class="proj-link">Live ↗</a>
-        </div>
-      </div>
-      <div class="project-title">Home Harbour</div>
-      <p class="project-desc">Airbnb-like backend system for property booking and management. Built with layered REST architecture, JWT authentication, and 15+ APIs covering property listing, booking flows, search filters, and user management.</p>
-      <div class="project-tech">
-        <span class="tech-badge" style="background:rgba(79,142,247,0.15);color:#90b8fa">Java</span>
-        <span class="tech-badge" style="background:rgba(0,201,167,0.12);color:#5de0c8">Spring Boot</span>
-        <span class="tech-badge" style="background:rgba(247,107,79,0.12);color:#f9a090">MySQL</span>
-        <span class="tech-badge" style="background:rgba(200,150,255,0.12);color:#d4aaff">JWT</span>
-        <span class="tech-badge" style="background:rgba(79,142,247,0.1);color:#90b8fa">JPA</span>
-      </div>
-      <div class="project-meta">
-        <span>⚙️ 15+ REST APIs</span>
-        <span>🔐 JWT Auth</span>
-        <span>🗄️ JPA + MySQL</span>
-      </div>
-    </div>
-
-    <!-- Project 2 -->
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-icon" style="background:rgba(0,201,167,0.12)">👥</div>
-        <div class="proj-links">
-          <a href="#" class="proj-link">GitHub ↗</a>
-        </div>
-      </div>
-      <div class="project-title">HRMS – Human Resource Management</div>
-      <p class="project-desc">Role-based HR management system with full CRUD operations, Spring Security authentication, authorization layers, and comprehensive exception handling. Includes unit testing with JUnit and Mockito for production-level reliability.</p>
-      <div class="project-tech">
-        <span class="tech-badge" style="background:rgba(79,142,247,0.15);color:#90b8fa">Java</span>
-        <span class="tech-badge" style="background:rgba(0,201,167,0.12);color:#5de0c8">Spring Boot</span>
-        <span class="tech-badge" style="background:rgba(247,107,79,0.12);color:#f9a090">Hibernate</span>
-        <span class="tech-badge" style="background:rgba(200,150,255,0.12);color:#d4aaff">H2 DB</span>
-        <span class="tech-badge" style="background:rgba(200,180,0,0.12);color:#e8d070">JUnit</span>
-        <span class="tech-badge" style="background:rgba(200,180,0,0.12);color:#e8d070">Mockito</span>
-      </div>
-      <div class="project-meta">
-        <span>🔑 Role-based Access</span>
-        <span>🧪 Unit Tested</span>
-        <span>⚠️ Exception Handling</span>
-      </div>
-    </div>
-
-    <!-- Project 3 -->
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-icon" style="background:rgba(247,107,79,0.12)">🤖</div>
-        <div class="proj-links">
-          <a href="#" class="proj-link">GitHub ↗</a>
-          <a href="#" class="proj-link">Demo ↗</a>
-        </div>
-      </div>
-      <div class="project-title">AI PDF Chat (RAG Project)</div>
-      <p class="project-desc">AI-integrated backend system enabling contextual document querying using Retrieval-Augmented Generation (RAG). Upload any PDF, ask natural language questions, and get intelligent context-aware answers — powered by Spring AI.</p>
-      <div class="project-tech">
-        <span class="tech-badge" style="background:rgba(79,142,247,0.15);color:#90b8fa">Java</span>
-        <span class="tech-badge" style="background:rgba(0,201,167,0.12);color:#5de0c8">Spring AI</span>
-        <span class="tech-badge" style="background:rgba(247,107,79,0.12);color:#f9a090">RAG</span>
-        <span class="tech-badge" style="background:rgba(200,180,0,0.12);color:#e8d070">Spring Boot</span>
-      </div>
-      <div class="project-meta">
-        <span>🧠 AI-Powered</span>
-        <span>📄 PDF Querying</span>
-        <span>🔍 RAG Architecture</span>
-      </div>
-    </div>
-
-    <!-- Project 4 - Mutual Fund (KFin) -->
-    <div class="project-card">
-      <span class="featured-tag" style="background:rgba(0,201,167,0.12);border-color:rgba(0,201,167,0.3);color:#5de0c8">🏦 KFin Project</span>
-      <div class="project-header">
-        <div class="project-icon" style="background:rgba(0,201,167,0.12)">📈</div>
-        <div class="proj-links">
-          <a href="#" class="proj-link">GitHub ↗</a>
-          <a href="#" class="proj-link">Live ↗</a>
-        </div>
-      </div>
-      <div class="project-title">Mutual Fund Investment Platform</div>
-      <p class="project-desc">Full-stack FinTech web application built during KFin Technologies training. Features fund discovery, real-time NAV tracking, SIP calculator, portfolio dashboard, and investment management — built with deep understanding of how Mutual Funds, Stocks, and FinTech systems work.</p>
-      <div class="project-tech">
-        <span class="tech-badge" style="background:rgba(79,142,247,0.15);color:#90b8fa">Java</span>
-        <span class="tech-badge" style="background:rgba(0,201,167,0.12);color:#5de0c8">Spring Boot</span>
-        <span class="tech-badge" style="background:rgba(247,107,79,0.12);color:#f9a090">React</span>
-        <span class="tech-badge" style="background:rgba(200,180,0,0.12);color:#e8d070">MySQL</span>
-        <span class="tech-badge" style="background:rgba(200,150,255,0.12);color:#d4aaff">REST APIs</span>
-      </div>
-      <div class="project-meta">
-        <span>📊 NAV Tracking</span>
-        <span>💰 SIP Calculator</span>
-        <span>📁 Portfolio Dashboard</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="section-label fade-up">Experience & Training</div>
-  <div class="section-title fade-up">Where I've Worked</div>
-  <p class="section-desc fade-up">Industry internships and real-world training that sharpened my backend, cloud, and FinTech skills.</p>
-  <div class="timeline fade-up">
-
-    <div class="timeline-item">
-      <div class="timeline-dot green"></div>
-      <div class="timeline-date">MAY 2026 – PRESENT</div>
-      <div class="timeline-title">Data Engineering Intern</div>
-      <div class="timeline-org">Celebal Technologies · Remote</div>
-      <div class="timeline-body">
-        <ul>
-          <li>Selected through competitive profile screening and online assessment from a national applicant pool</li>
-          <li>Working with ETL workflows, data pipelines, cloud analytics, and large-scale data processing</li>
-          <li>Gaining hands-on exposure to cloud platforms, data warehousing, and engineering best practices</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot green"></div>
-      <div class="timeline-date">MAY 2026 – JUNE 2026</div>
-      <div class="timeline-title">Summer Industry Training Program</div>
-      <div class="timeline-org">KFin Technologies · Industry Training</div>
-      <div class="timeline-body">
-        <ul>
-          <li>Trained on FinTech systems — learned Finance domain: Stocks, Mutual Funds, NAV, SIP, and investment flows</li>
-          <li>Gained practical exposure to Cloud (AWS/Azure), DevOps, Docker, CI/CD pipelines, SQL, and backend architecture</li>
-          <li>Built a full-stack Mutual Fund Investment Platform as a hands-on capstone project</li>
-          <li>Understood how enterprise-grade financial software is architected and maintained at scale</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-date">2023 – PRESENT</div>
-      <div class="timeline-title">B.Tech in Computer Science & Engineering</div>
-      <div class="timeline-org">SOA University (ITER) · Bhubaneswar</div>
-      <div class="timeline-body">
-        <ul>
-          <li>CGPA: 8.55/10 — consistent academic performance across all semesters</li>
-          <li>Core subjects: DSA, DBMS, OS, OOP, Computer Networks, Cloud Computing, Machine Learning</li>
-          <li>Previously completed Diploma in CSE from Lovely Professional University (CGPA: 7.85)</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ACHIEVEMENTS -->
-<section id="achievements">
-  <div class="section-label fade-up">Achievements & Certifications</div>
-  <div class="section-title fade-up">Beyond the Code</div>
-  <p class="section-desc fade-up">Certifications, competitive milestones, and things that keep me growing every day.</p>
-  <div class="ach-grid fade-up">
-    <div class="ach-card">
-      <div class="ach-emoji">🏢</div>
-      <div class="ach-title">Celebal Technologies — Internship</div>
-      <div class="ach-desc">Selected for a Data Engineering Internship through competitive profile screening and online assessment from a national pool of applicants.</div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-emoji">🏦</div>
-      <div class="ach-title">KFin Technologies — FinTech Training</div>
-      <div class="ach-desc">Industry training on FinTech, Mutual Funds, Stocks, Finance domain, Cloud, DevOps, SQL, and backend engineering. Built a full-stack investment platform.</div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-emoji">🔗</div>
-      <div class="ach-title">Microservices Architecture</div>
-      <div class="ach-desc">Hands-on learning with Spring Cloud, Eureka Service Registry, API Gateway, Feign Client, and inter-service communication patterns.</div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-emoji">☁️</div>
-      <div class="ach-title">Cloud & Azure Fundamentals</div>
-      <div class="ach-desc">Trained on AWS and Azure cloud fundamentals — compute, storage, networking, serverless, and cloud-native deployment strategies.</div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-emoji">🧩</div>
-      <div class="ach-title">250+ Coding Problems Solved</div>
-      <div class="ach-desc">Consistently practised Java, SQL, and Data Structures problems across LeetCode and other platforms — building strong algorithmic foundations.</div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-emoji">☕</div>
-      <div class="ach-title">OOP in Java — UC San Diego</div>
-      <div class="ach-desc">Certified in Object-Oriented Programming in Java by University of California, San Diego on Coursera.</div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-emoji">🗄️</div>
-      <div class="ach-title">Relational Databases — IBM</div>
-      <div class="ach-desc">IBM-certified in RDBMS fundamentals covering SQL, database design, normalization, transactions, and advanced querying.</div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-emoji">🌐</div>
-      <div class="ach-title">Computer Networking — Google</div>
-      <div class="ach-desc">Google-certified in networking fundamentals — TCP/IP, HTTP, DNS, and network protocols essential for designing robust backend systems.</div>
-    </div>
-  </div>
-</section>
-
-<!-- RESUME SNAPSHOT -->
-<section id="resume" style="background:var(--surface)">
-  <div class="section-label fade-up">Resume</div>
-  <div class="section-title fade-up">Education & Certifications</div>
-
-  <div class="resume-grid fade-up">
-    <div class="resume-col">
-      <h3>Education</h3>
-      <div class="resume-item">
-        <div class="resume-item-title">B.Tech — Computer Science & Engineering</div>
-        <div class="resume-item-sub">SOA University (ITER) · 2023–2027 · CGPA: 8.55/10</div>
-      </div>
-      <div class="resume-item">
-        <div class="resume-item-title">Diploma — Computer Science Engineering</div>
-        <div class="resume-item-sub">Lovely Professional University · 2021–2024 · CGPA: 7.85</div>
-      </div>
-      <div class="resume-item">
-        <div class="resume-item-title">CBSE Class X</div>
-        <div class="resume-item-sub">Percentage: 78%</div>
-      </div>
-    </div>
-    <div class="resume-col">
-      <h3>Certifications</h3>
-      <div class="cert-list">
-        <div class="cert-item">OOP in Java — University of California, San Diego</div>
-        <div class="cert-item">Relational Databases (RDBMS) — IBM</div>
-        <div class="cert-item">Computer Networking — Google</div>
-      </div>
-    </div>
-  </div>
-
-  <div style="display:flex;align-items:center;justify-content:center;gap:1.5rem;padding:2rem;border:1px dashed rgba(79,142,247,0.3);border-radius:14px;background:rgba(79,142,247,0.04)" class="fade-up">
+  <div class="about-box fade">
+    <div class="avatar"><div class="avatar-inner"><img src="myself.png" alt="Monu Kumar" onerror="this.style.display='none';this.parentNode.innerHTML='MK'" /></div></div>
     <div>
-      <p style="color:var(--text);font-weight:500;margin-bottom:.25rem">📄 Full Resume Available</p>
-      <p style="color:var(--muted);font-size:.85rem">Download my complete resume with all projects, experience, and certifications.</p>
+      <div class="label">About</div>
+      <div class="title">Backend-focused CS student</div>
+      <p class="about-text">Final-year Computer Science student focused on <strong>Java Backend Development</strong>, <strong>Microservices</strong>, and <strong>AI-powered applications</strong>. Currently a Data Engineering Intern at <strong>Celebal Technologies</strong> and trained at <strong>KFin Technologies</strong>.</p>
+      <div class="chips">
+        <span class="chip">📍 Bihar, India</span><span class="chip">B.Tech CSE · ITER</span><span class="chip">Java + Spring Boot</span><span class="chip">Docker</span><span class="chip">Spring AI</span>
+      </div>
     </div>
-    <a href="mailto:monubhumihar93@gmail.com?subject=Resume Request — Monu Kumar" class="btn-primary" style="white-space:nowrap">Request Resume</a>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-label fade-up">Contact</div>
-  <div class="section-title fade-up">Let's Connect</div>
-  <div class="contact-grid fade-up">
-    <div class="contact-info">
-      <h3>Open to opportunities 👋</h3>
-      <p>I'm actively looking for internships and full-time roles in Java backend development, microservices, data engineering, and cloud. If you have an opportunity or just want to talk tech, my inbox is always open!</p>
-      <div class="contact-links">
-        <a href="mailto:monubhumihar93@gmail.com" class="contact-link">
-          <span>📧</span><span>monubhumihar93@gmail.com</span>
-        </a>
-        <a href="tel:9341292943" class="contact-link">
-          <span>📞</span><span>+91 9341292943</span>
-        </a>
-       <a href="https://www.linkedin.com/in/monu-kumar21" target="_blank" class="contact-link">
-  <span>💼</span><span>linkedin.com/in/monu-kumar21</span>
-        </a>
-        <a href="https://github.com/monukumar-12" target="_blank" class="contact-link">
-          <span>🐙</span><span>GitHub — Update your URL</span>
-        </a>
-      </div>
+<section id="skills">
+  <div class="label fade">Skills</div>
+  <div class="title fade">Tech Stack</div>
+  <div class="skill-grid fade">
+    <div class="skill-card"><div class="skill-title">Languages</div><div class="skill-list">Java · SQL · Python · C++</div></div>
+    <div class="skill-card"><div class="skill-title">Backend</div><div class="skill-list">Spring Boot · Spring Security · REST APIs · Hibernate · JPA</div></div>
+    <div class="skill-card"><div class="skill-title">Microservices</div><div class="skill-list">Spring Cloud Gateway · Eureka · OpenFeign · JWT</div></div>
+    <div class="skill-card"><div class="skill-title">Databases</div><div class="skill-list">PostgreSQL · MySQL · H2 · pgvector</div></div>
+    <div class="skill-card"><div class="skill-title">AI & Data</div><div class="skill-list">Spring AI · RAG · Spark · Databricks · Pandas</div></div>
+    <div class="skill-card"><div class="skill-title">Tools</div><div class="skill-list">Docker · Git · Maven · Linux · Postman · Swagger</div></div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="label fade">Projects</div>
+  <div class="title fade">Featured Work</div>
+  <p class="desc fade">Only the main projects — quick to scan and clear for recruiters.</p>
+  <div class="projects-grid fade">
+    <article class="project">
+      <div class="project-top"><div class="icon">🏠</div><span class="tag">Backend</span></div>
+      <h3>HomeHarbour</h3>
+      <p>Airbnb-like backend platform.</p>
+      <ul class="points"><li>JWT Authentication</li><li>Booking & Property APIs</li><li>15+ REST APIs</li></ul>
+      <div class="tech"><span>Java</span><span>Spring Boot</span><span>PostgreSQL</span><span>JWT</span></div>
+    </article>
+
+    <article class="project">
+      <div class="project-top"><div class="icon">🛒</div><span class="tag">Microservices</span></div>
+      <h3>E-Commerce Microservices</h3>
+      <p>Cloud-native backend system.</p>
+      <ul class="points"><li>API Gateway & Eureka</li><li>OpenFeign Communication</li><li>Dockerized Deployment</li></ul>
+      <div class="tech"><span>Spring Boot</span><span>Spring Cloud</span><span>Docker</span><span>PostgreSQL</span></div>
+    </article>
+
+    <article class="project">
+      <div class="project-top"><div class="icon">🤖</div><span class="tag">AI/RAG</span></div>
+      <h3>AI Document Query System</h3>
+      <p>RAG-powered PDF assistant.</p>
+      <ul class="points"><li>Spring AI + Ollama</li><li>Semantic Search</li><li>Multi-PDF Support</li></ul>
+      <div class="tech"><span>Java</span><span>Spring AI</span><span>pgvector</span><span>PostgreSQL</span></div>
+    </article>
+
+    <article class="project">
+      <div class="project-top"><div class="icon">💳</div><span class="tag">ML</span></div>
+      <h3>Credit Card Fraud Detection</h3>
+      <p>Machine learning fraud detection project.</p>
+      <ul class="points"><li>Data Cleaning & Analysis</li><li>Classification Model</li><li>Financial Dataset</li></ul>
+      <div class="tech"><span>Python</span><span>Pandas</span><span>Scikit-Learn</span><span>Jupyter</span></div>
+    </article>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="label fade">Experience</div>
+  <div class="title fade">Training & Internship</div>
+  <div class="timeline fade">
+    <div class="time-item">
+      <div class="date">JUN 2026 – PRESENT</div>
+      <div class="job">Data Engineering Intern</div>
+      <div class="org">Celebal Technologies · Remote</div>
+      <div class="body">Python, SQL, Data Cleaning, Spark, Databricks, and ETL basics.</div>
     </div>
-    <div class="contact-form">
-      <div class="form-group">
-        <label>Your Name</label>
-        <input type="text" placeholder="Recruiter / Company Name"/>
-      </div>
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" placeholder="recruiter@company.com"/>
-      </div>
-      <div class="form-group">
-        <label>Message</label>
-        <textarea placeholder="Hi Monu, I'd love to discuss an opportunity at..."></textarea>
-      </div>
-      <button class="btn-primary" style="align-self:flex-start;cursor:pointer" onclick="window.location.href='mailto:monubhumihar93@gmail.com'">Send Message →</button>
+    <div class="time-item">
+      <div class="date">MAY 2026 – JUN 2026</div>
+      <div class="job">Summer Industry Training</div>
+      <div class="org">KFin Technologies</div>
+      <div class="body">SQL, Docker, Cloud fundamentals, backend systems, and deployment workflows.</div>
+    </div>
+    <div class="time-item">
+      <div class="date">2024 – 2027</div>
+      <div class="job">B.Tech in Computer Science & Engineering</div>
+      <div class="org">ITER, SOA University · CGPA 8.55</div>
+      <div class="body">Core CS: DSA, DBMS, OS, OOP, CN, Cloud Computing.</div>
+    </div>
+  </div>
+</section>
+
+<section id="resume">
+  <div class="label fade">Resume</div>
+  <div class="title fade">Education & Certifications</div>
+  <div class="resume-box fade">
+    <div class="mini-card">
+      <h3>Education</h3>
+      <p><strong>B.Tech CSE</strong> — ITER, SOA University · 2024–2027 · CGPA 8.55</p>
+      <p><strong>Diploma CSE</strong> — Lovely Professional University · CGPA 7.85</p>
+      <p><strong>Class X</strong> — CBSE · 78%</p>
+    </div>
+    <div class="mini-card">
+      <h3>Certifications</h3>
+      <p>OOP in Java — UC San Diego</p>
+      <p>Relational Databases — IBM</p>
+      <p>Computer Networking — Google</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="label fade">Contact</div>
+  <div class="title fade">Let’s Connect</div>
+  <div class="contact-grid fade">
+    <div class="mini-card">
+      <h3>Open to opportunities</h3>
+      <p>Java Backend · Microservices · Data Engineering · AI Applications</p>
+    </div>
+    <div class="contact-card">
+      <a href="mailto:monubhumihar93@gmail.com">📧 monubhumihar93@gmail.com</a>
+      <a href="tel:+919341292943">📞 +91 9341292943</a>
+      <a href="https://www.linkedin.com/in/monu-kumar21" target="_blank">💼 linkedin.com/in/monu-kumar21</a>
+      <a href="https://github.com/monukumar-12" target="_blank">🐙 github.com/monukumar-12</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <div>
-    <div class="footer-name">Monu Kumar</div>
-    <div style="margin-top:.2rem">Java Backend Developer · Microservices · Cloud · B.Tech CSE 2027</div>
-  </div>
-  <div>📍 Muzaffarpur, Bihar, India</div>
+  <div><strong style="color:var(--text)">Monu Kumar</strong> · Java Backend Developer</div>
+  <div>Muzaffarpur, Bihar, India</div>
 </footer>
 
 <script>
-const obs = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
-},{threshold:0.1});
-document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
 </script>
 </body>
 </html>
